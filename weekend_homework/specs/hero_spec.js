@@ -1,17 +1,25 @@
 var assert = require("assert")
 var Hero = require("../hero.js")
 var Task = require("../task.js")
+var Food = require("../food.js")
 
 describe("Hero", function(){
   var batman
   var task1
+  var task2
+  var task3
+  var task4
+  var favFood
+  var food
 
   beforeEach(function() {
-    batman = new Hero("Batman", 100, "his Greens")
+    batman = new Hero("Batman", 100, "batcakes")
     task1 = new Task("Drive the batmobile", 1, 1, "the thrill of driving the B-mobile")
     task2 = new Task("kick some badguy ass", 4, 4, "batcakes")
     task3 = new Task("Save the day", 7, 10, "The girl")
     task4 = new Task("Kissed the girl", 10, 4, "kisses")
+    favFood = new Food("batcakes", 50)
+    food = new Food("pizza", 25)
   })
 
   it("The bat has a name", function(){
@@ -28,8 +36,8 @@ describe("Hero", function(){
   })
 
   it("the bat eats to heal", function(){
-    batman.damageHealth(25)
-    batman.heroEatsFavFood()
+    batman.damageHealth(50)
+    batman.heroEatsFood(favFood)
     assert.strictEqual(batman.health, 100)
   })
 

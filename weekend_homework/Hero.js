@@ -13,8 +13,13 @@ Hero.prototype.damageHealth = function(dmg) {
   this.health -= dmg
 }
 
-Hero.prototype.heroEatsFavFood = function() {
-  this.health += 25
+Hero.prototype.heroEatsFood = function(foodType) {
+  if (foodType.name === this.favFood) {
+    this.health += (foodType.regenValue * 1.5)
+  } else {
+    this.health += foodType.regenValue
+  }
+  if (this.health >= 100) { this.health = 100}
 }
 
 Hero.prototype.addTaskToList = function(task) {
