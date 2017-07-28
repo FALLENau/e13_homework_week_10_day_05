@@ -55,13 +55,14 @@ describe("Hero", function(){
   })//to be updated
 
   it("da bat can sort his toDoList", function(){
+    var newList = batman.toDoList
     batman.addTaskToList(task4)
     batman.addTaskToList(task1)
     batman.addTaskToList(task3)
     batman.addTaskToList(task2)
 
-    batman.sortBy(batman.toDoList, difficulty)
-    assert.strictEqual(batman.toDoList[0].label, "Drive the batmobile")
+    batman.sortBy(batman.toDoList, 'difficulty')
+    assert.strictEqual(batman.searchByType[0].label, "Drive the batmobile")
   })
 
 })
