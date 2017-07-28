@@ -26,7 +26,12 @@ Hero.prototype.addTaskToList = function(task) {
   this.toDoList.push(task)
 }
 
-Hero.prototype.a = function() {
+Hero.prototype.sortBy = function(key, desc) {
+
+  return function(a,b){
+    return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+  }
+
 }
 
 module.exports = Hero

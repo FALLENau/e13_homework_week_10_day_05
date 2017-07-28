@@ -11,6 +11,7 @@ describe("Hero", function(){
   var task4
   var favFood
   var food
+  var difficulty
 
   beforeEach(function() {
     batman = new Hero("Batman", 100, "batcakes")
@@ -35,7 +36,7 @@ describe("Hero", function(){
     assert.strictEqual(batman.health, 75)
   })
 
-  it("the bat eats to heal", function(){
+  it("the bat eats his favFood to heal a lot, but not go over 100%", function(){
     batman.damageHealth(50)
     batman.heroEatsFood(favFood)
     assert.strictEqual(batman.health, 100)
@@ -52,5 +53,17 @@ describe("Hero", function(){
     batman.addTaskToList(task4)
     assert.strictEqual(batman.toDoList.length, 3)
   })//to be updated
+
+  it("da bat can sort his toDoList", function(){
+    batman.addTaskToList(task1)
+    batman.addTaskToList(task2)
+    batman.addTaskToList(task3)
+    batman.addTaskToList(task4)
+
+    batman.sortBy("difficulty", true)
+    // var result = 
+    // console.log(result)
+    assert.strictEqual(batman.toDoList[0].label, "Drive the batmobile")
+  })
 
 })
