@@ -13,9 +13,37 @@
 // }
 
 
-var sayHello = function() {
-  console.log( this )
-  return "Hello"
-}.bind({name: "Rick"})
+// var sayHello = function() {
+//   console.log( this )
+//   return "Hello " + this.name
+// }.bind({name: "Rick"})
+//
+// console.log( sayHello() )
 
-console.log( sayHello() )
+// var returnFunction = function( num1 ) {
+//   return function(num2) {
+//     return num1 + num2
+//   }
+// }
+//
+//
+// console.log( returnFunction(99)(111) )//output "210"
+
+var instructors = {
+  names: ["Rick","Jarrod","Darren"],
+
+  printNames: function() {
+    // console.log(this)
+    this.names.forEach( function() {
+      console.log(this)
+    }.bind(this))
+  }
+}
+
+instructors.printNames()
+// var sayHello = function() {
+//   console.log( this )
+//   return "Hello " + this.name
+// }.bind({name: "Rick"})
+//
+// console.log( sayHello() )
