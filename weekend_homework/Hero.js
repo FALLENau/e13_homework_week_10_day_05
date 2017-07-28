@@ -1,3 +1,6 @@
+var _ = require("lodash")
+
+
 var Hero = function(name, health, favFood) {
   this.name = name
   this.health = health
@@ -26,12 +29,10 @@ Hero.prototype.addTaskToList = function(task) {
   this.toDoList.push(task)
 }
 
-Hero.prototype.sortBy = function(key, desc) {
-
-  return function(a,b){
-    return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
-  }
-
+Hero.prototype.sortBy = function(key) {
+  var arr = this.toDoList
+  _.sortBy(arr, key)
+  // this.toDoList.sort()
 }
 
 module.exports = Hero
