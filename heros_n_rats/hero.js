@@ -30,8 +30,21 @@ Hero.prototype.addTaskToList = function(task) {
 }
 
 Hero.prototype.searchBy = function(arr, key, direction) {
-    this.toDoList = _.orderBy(arr, [key], [direction])
+  this.toDoList = _.orderBy(arr, [key], [direction])
   return this.toDoList
+}
+
+Hero.prototype.doTask = function(arr, value, change) {
+  console.log(this.toDoList)
+  this.toDoList = _.find(arr, [value].label, [change]);
+
+  // this.toDoList = _.find(arr, function(o) { return o.key === value; });
+  console.log(this.toDoList)
+  return this.toDoList
+}
+
+Hero.prototype.checkTaskIsDone = function() {
+
 }
 
 module.exports = Hero

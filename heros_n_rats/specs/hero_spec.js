@@ -18,7 +18,7 @@ describe("Hero", function(){
     task1 = new Task("Drive the batmobile", 1, 1, "the thrill of driving the B-mobile")
     task2 = new Task("kick some badguy ass", 4, 4, "batcakes")
     task3 = new Task("Save the day", 7, 10, "The girl")
-    task4 = new Task("Kissed the girl", 10, 4, "kisses")
+    task4 = new Task("Kiss the girl", 10, 4, "kisses")
     favFood = new Food("batcakes", 50)
     food = new Food("pizza", 25)
   })
@@ -55,7 +55,6 @@ describe("Hero", function(){
   })//to be updated
 
   it("da bat can sort his toDoList", function(){
-    var newList = batman.toDoList
     batman.addTaskToList(task4)
     batman.addTaskToList(task1)
     batman.addTaskToList(task3)
@@ -66,7 +65,6 @@ describe("Hero", function(){
   })
 
   it("da bat can sort his toDoList", function(){
-    var newList = batman.toDoList
     batman.addTaskToList(task4)
     batman.addTaskToList(task1)
     batman.addTaskToList(task3)
@@ -74,6 +72,14 @@ describe("Hero", function(){
 
     batman.searchBy(batman.toDoList, 'urgency', 'desc')
     assert.strictEqual(batman.toDoList[0].label, "Save the day")
+  })
+
+  it("Bat has kissed the girl today, go bats!", function(){
+    batman.addTaskToList(task4)
+
+    batman.doTask(batman.toDoList, 'Kiss the girl', true)
+    // batman.checkTaskIsDone(task4)
+    assert.strictEqual(batman.toDoList[0].done, true)
   })
 
 })
