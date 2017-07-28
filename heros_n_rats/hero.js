@@ -29,9 +29,8 @@ Hero.prototype.addTaskToList = function(task) {
   this.toDoList.push(task)
 }
 
-Hero.prototype.searchBy = function(arr, key) {
- this.toDoList = _.orderBy(arr, [key], ['asc'])
-  // console.log(this.toDoList)
+Hero.prototype.searchBy = function(arr, key, direction) {
+    this.toDoList = _.orderBy(arr, [key], [direction])
   return this.toDoList
 }
 
