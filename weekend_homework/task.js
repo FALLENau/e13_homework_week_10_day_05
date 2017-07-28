@@ -1,4 +1,4 @@
-var Task = function(task, difficulty) {
+var Task = function(task, difficulty, urgency, reward) {
   this.task = task
   this.difficulty = difficulty
   this.urgency = urgency

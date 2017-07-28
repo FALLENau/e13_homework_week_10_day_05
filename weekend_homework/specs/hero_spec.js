@@ -1,11 +1,14 @@
 var assert = require("assert")
 var Hero = require("../hero.js")
+var Task = require("../task.js")
 
 describe("Hero", function(){
   var batman
+  var task1
 
   beforeEach(function() {
     batman = new Hero("Batman", 100, "his Greens")
+    task1 = new Task("Drive the batmobile", 1, 1,"cake")
   })
 
   it("The bat has a name", function(){
@@ -28,11 +31,11 @@ describe("Hero", function(){
   })
 
   it("the bat can add to his todo list", function(){
-    batman.addTaskToList({task: "Drive the batmobile", difficulty: 1})
+    batman.addTaskToList(task1)
     assert.strictEqual(batman.toDoList.length, 1)
   })
 
-  it("all the tasks!", function() {
+  xit("all the tasks!", function() {
     batman.addTaskToList({
       task: "Save the day", difficulty: 7
     })
@@ -43,6 +46,6 @@ describe("Hero", function(){
       task: "kick some badguy ass", difficulty: 4
     })
     assert.strictEqual(batman.toDoList.length, 3)
-  })
+  })//to be updated
 
 })
