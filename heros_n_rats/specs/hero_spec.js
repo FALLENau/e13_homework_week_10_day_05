@@ -77,7 +77,7 @@ describe("Hero", function(){
   it("Bat has kissed the girl today, go bats!", function(){
     batman.addTaskToList(task4)
 
-    batman.doTask(batman.toDoList, 'Kiss the girl', true)
+    batman.doTask(batman.toDoList, 'label', 'Kiss the girl', true)
     // batman.checkTaskIsDone(task4)
     assert.strictEqual(batman.toDoList[0].done, true)
   })

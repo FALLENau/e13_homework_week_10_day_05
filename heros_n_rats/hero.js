@@ -34,12 +34,12 @@ Hero.prototype.searchBy = function(arr, key, direction) {
   return this.toDoList
 }
 
-Hero.prototype.doTask = function(arr, value, change) {
+Hero.prototype.doTask = function(arr, key, value, change) {
   console.log(this.toDoList)
-  this.toDoList = _.find(arr, [value].label, [change]);
+  // this.toDoList = _.find(arr, [value].label, [change]);
 
-  // this.toDoList = _.find(arr, function(o) { return o.key === value; });
-  console.log(this.toDoList)
+  var found = _.find(arr, function(key) { return key === value; });
+  console.log(found)
   return this.toDoList
 }
 
