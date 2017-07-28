@@ -8,7 +8,10 @@ describe("Hero", function(){
 
   beforeEach(function() {
     batman = new Hero("Batman", 100, "his Greens")
-    task1 = new Task("Drive the batmobile", 1, 1,"cake")
+    task1 = new Task("Drive the batmobile", 1, 1, "the thrill of driving the B-mobile")
+    task2 = new Task("kick some badguy ass", 4, 4, "batcakes")
+    task3 = new Task("Save the day", 7, 10, "The girl")
+    task4 = new Task("Kissed the girl", 10, 4, "kisses")
   })
 
   it("The bat has a name", function(){
@@ -35,16 +38,10 @@ describe("Hero", function(){
     assert.strictEqual(batman.toDoList.length, 1)
   })
 
-  xit("all the tasks!", function() {
-    batman.addTaskToList({
-      task: "Save the day", difficulty: 7
-    })
-    batman.addTaskToList({
-      task: "Kissed the girl", difficulty: 10
-    })
-    batman.addTaskToList({
-      task: "kick some badguy ass", difficulty: 4
-    })
+  it("all the tasks!", function() {
+    batman.addTaskToList(task2)
+    batman.addTaskToList(task3)
+    batman.addTaskToList(task4)
     assert.strictEqual(batman.toDoList.length, 3)
   })//to be updated
 
