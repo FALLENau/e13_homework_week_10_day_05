@@ -2,17 +2,10 @@ var assert = require("assert")
 var Hero = require("../hero.js")
 var Task = require("../task.js")
 var Food = require("../food.js")
+var rat = require("../rat.js")
 
 describe("Hero", function(){
-  var batman
-  var task1
-  var task2
-  var task3
-  var task4
-  var favFood
-  var food
-  var difficulty
-
+  
   beforeEach(function() {
     batman = new Hero("Batman", 100, "batcakes")
     task1 = new Task("Drive the batmobile", 1, 1, "the thrill of driving the B-mobile")
@@ -74,10 +67,14 @@ describe("Hero", function(){
     assert.strictEqual(batman.toDoList[0].label, "Save the day")
   })
 
-  it("Bat has kissed the girl today, go bats!", function(){
+  xit("Bat has kissed the girl today, go bats!", function(){
+    batman.addTaskToList(task1)
+    batman.addTaskToList(task3)
+    batman.addTaskToList(task2)
     batman.addTaskToList(task4)
 
-    batman.doTask(batman.toDoList, 'label', 'Kiss the girl', true)
+
+    batman.doTask(batman.toDoList, /*'label',*/ 'Kiss the girl', true)
     // batman.checkTaskIsDone(task4)
     assert.strictEqual(batman.toDoList[0].done, true)
   })
