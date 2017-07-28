@@ -10,6 +10,7 @@ Hero.prototype.heroCanTalk = function(){
 }
 
 // var heroTasks = [{task: "Save the day", difficulty: 7}, {"Kissed the girl", 10}, {"kick some badguy ass", 4}]
-var batman = new Hero('Batman', 100, 'His Greens')
+// var batman = new Hero('Batman', 100, 'His Greens')
 
-console.log(batman.heroCanTalk())
+// console.log(batman.heroCanTalk())
+module.exports = Hero
