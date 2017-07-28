@@ -2,15 +2,26 @@ var Hero = function(name, health, favFood) {
   this.name = name
   this.health = health
   this.favFood = favFood
-  this.heroTasks = []
+  this.toDoList = []
 }
 
-Hero.prototype.heroCanTalk = function(){
+Hero.prototype.heroCanIntroduceSelf = function() {
   return "Hello my name is " + this.name
 }
 
-// var heroTasks = [{task: "Save the day", difficulty: 7}, {"Kissed the girl", 10}, {"kick some badguy ass", 4}]
-// var batman = new Hero('Batman', 100, 'His Greens')
+Hero.prototype.damageHealth = function(dmg) {
+  this.health -= dmg
+}
 
-// console.log(batman.heroCanTalk())
+Hero.prototype.heroEatsFavFood = function() {
+  this.health += 25
+}
+
+Hero.prototype.addTaskToList = function(task) {
+  this.toDoList.push(task)
+}
+
+Hero.prototype.a = function() {
+}
+
 module.exports = Hero
