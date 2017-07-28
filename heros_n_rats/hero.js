@@ -29,10 +29,15 @@ Hero.prototype.addTaskToList = function(task) {
   this.toDoList.push(task)
 }
 
-Hero.prototype.sortBy = function(key) {
+Hero.prototype.sortBy = function(arr, key) {
   var arr = this.toDoList
   _.sortBy(arr, key)
   // this.toDoList.sort()
+}
+
+findingTheLargestAccount: function(accounts) {
+  var arr = _.orderBy(accounts, 'amount', 'asc')
+  return arr[arr.length -1]
 }
 
 module.exports = Hero

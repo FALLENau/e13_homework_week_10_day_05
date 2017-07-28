@@ -60,7 +60,7 @@ describe("Hero", function(){
     batman.addTaskToList(task3)
     batman.addTaskToList(task2)
 
-    batman.sortBy(difficulty)
+    batman.sortBy(batman.toDoList, difficulty)
     assert.strictEqual(batman.toDoList[0].label, "Drive the batmobile")
   })
 
