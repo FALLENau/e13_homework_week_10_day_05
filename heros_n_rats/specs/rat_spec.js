@@ -17,4 +17,11 @@ describe("Rat", function(){
     assert.strictEqual(favFood.regenValue, -50)
   })
 
+  it("the Bat gets sick becuz of rats", function(){
+    batman.damageHealth(50)
+    fido.touchFood(favFood)
+    batman.heroEatsFood(favFood)
+    assert.strictEqual(batman.health, -25)
+  })
+
 })

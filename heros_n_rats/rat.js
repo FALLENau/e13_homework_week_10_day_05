@@ -3,8 +3,9 @@ var Rat = function(name) {
 }
 
 Rat.prototype.touchFood = function(favFood) {
-  this.regenValue -= (this.regenValue * 2)
-  console.log(this)
-  // return favFood.regenValue
+  favFood.regenValue -= (favFood.regenValue * 2)
+  return favFood.regenValue
 }
 //can't seam to get the value to console.log let along return in a format
+
+module.exports = Rat
