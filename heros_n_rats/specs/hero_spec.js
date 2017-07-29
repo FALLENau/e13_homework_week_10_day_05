@@ -5,7 +5,7 @@ var Food = require("../food.js")
 var rat = require("../rat.js")
 
 describe("Hero", function(){
-  
+
   beforeEach(function() {
     batman = new Hero("Batman", 100, "batcakes")
     task1 = new Task("Drive the batmobile", 1, 1, "the thrill of driving the B-mobile")
@@ -67,11 +67,11 @@ describe("Hero", function(){
     assert.strictEqual(batman.toDoList[0].label, "Save the day")
   })
 
-  xit("Bat has kissed the girl today, go bats!", function(){
+  it("Bat has kissed the girl today, go bats!", function(){
     batman.addTaskToList(task1)
-    batman.addTaskToList(task3)
-    batman.addTaskToList(task2)
-    batman.addTaskToList(task4)
+    // batman.addTaskToList(task3)
+    // batman.addTaskToList(task2)
+    // batman.addTaskToList(task4)
 
 
     batman.doTask(batman.toDoList, /*'label',*/ 'Kiss the girl', true)
