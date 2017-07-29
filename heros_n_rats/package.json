@@ -9,6 +9,11 @@
   "author": "Reece c Jones",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^3.4.2"
+    "lodash": "^4.17.4",
+    "mocha": "^3.4.2",
+    "package-name": "^0.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }

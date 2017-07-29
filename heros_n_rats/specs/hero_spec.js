@@ -16,15 +16,15 @@ describe("Hero", function(){
     food = new Food("pizza", 25)
   })
 
-  it("The bat has a name", function(){
+  it("The bat has a name", function() {
     assert.strictEqual(batman.name, "Batman")
   })
 
-  it("the bat has health", function(){
+  it("the bat has health", function() {
     assert.strictEqual(batman.health, 100)
   })
 
-  it("the bat has been hit by the joker", function(){
+  it("the bat has been hit by the joker", function() {
     batman.damageHealth(25)
     assert.strictEqual(batman.health, 75)
   })
@@ -35,7 +35,7 @@ describe("Hero", function(){
     assert.strictEqual(batman.health, 100)
   })
 
-  it("the bat can add to his todo list", function(){
+  it("the bat can add to his todo list", function() {
     batman.addTaskToList(task1)
     assert.strictEqual(batman.toDoList.length, 1)
   })
@@ -47,7 +47,7 @@ describe("Hero", function(){
     assert.strictEqual(batman.toDoList.length, 3)
   })//to be updated
 
-  it("da bat can sort his toDoList", function(){
+  it("da bat can sort his toDoList", function() {
     batman.addTaskToList(task4)
     batman.addTaskToList(task1)
     batman.addTaskToList(task3)
@@ -57,7 +57,7 @@ describe("Hero", function(){
     assert.strictEqual(batman.toDoList[0].label, "Drive the batmobile")
   })
 
-  it("da bat can sort his toDoList", function(){
+  it("da bat can sort his toDoList", function() {
     batman.addTaskToList(task4)
     batman.addTaskToList(task1)
     batman.addTaskToList(task3)
@@ -67,16 +67,17 @@ describe("Hero", function(){
     assert.strictEqual(batman.toDoList[0].label, "Save the day")
   })
 
-  it("Bat has kissed the girl today, go bats!", function(){
+  it("Bat has kissed the girl today, go bats!", function() {
     batman.addTaskToList(task1)
-    // batman.addTaskToList(task3)
-    // batman.addTaskToList(task2)
-    // batman.addTaskToList(task4)
+    batman.addTaskToList(task3)
+    batman.addTaskToList(task2)
+    batman.addTaskToList(task4)
+    batman.doTask('Kiss the girl')
+    assert.strictEqual(task4.done, true)
+  })
 
-
-    batman.doTask(batman.toDoList, /*'label',*/ 'Kiss the girl', true)
-    // batman.checkTaskIsDone(task4)
-    assert.strictEqual(batman.toDoList[0].done, true)
+  it("The bats can die(not really)", function() {
+    batman.damageHealth(101)
   })
 
 })

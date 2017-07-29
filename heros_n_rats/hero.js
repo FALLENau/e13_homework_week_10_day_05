@@ -34,26 +34,15 @@ Hero.prototype.searchBy = function(arr, key, direction) {
   return this.toDoList
 }
 
-Hero.prototype.doTask = function(arr, /*key,*/ value, change) {
-  console.log(this.toDoList)
-  // for (var i=0; i<items.length; i++) {
-  // copy.push(items[i])
-  // }
-  // arr.forEach(function()
-  // for (var i=0; i<arr.length; i++)
-  //   if(i === value) {
-  //     this.toDoList[i].done = change
-  //   }
-  // }
+Hero.prototype.doTask = function(taskLabel) {
+  var taskToBeDone = this.toDoList.find(function (task) {
+    return task.label === taskLabel
+  })
+  taskToBeDone.done = true
+}
 
-  this.toDoList = _.find(arr, [value].label, [change]);
-  // var temp = []
-  // _.find(arr, function(key) { key === value; })
-  // arr.done = change
-  console.log(this.toDoList)
-  // console.log(temp.done)
-
-  // return this.toDoList
+Hero.prototype.checkHelth = function () {
+  
 }
 
 module.exports = Hero
