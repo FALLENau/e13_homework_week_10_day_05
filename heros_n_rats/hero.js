@@ -41,8 +41,11 @@ Hero.prototype.doTask = function(taskLabel) {
   taskToBeDone.done = true
 }
 
-Hero.prototype.checkHelth = function () {
-  
-}
+// Hero.prototype.checkHelth = function (callback) {
+//   if (this.health < 1) {
+//     return var callback =function(){ console.log("The ${this.name} is dead!") }
+//   }
+// }
+
 
 module.exports = Hero

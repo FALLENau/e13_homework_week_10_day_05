@@ -76,8 +76,10 @@ describe("Hero", function(){
     assert.strictEqual(task4.done, true)
   })
 
-  it("The bats can die(not really)", function() {
-    batman.damageHealth(101)
-  })
+  // it("The bats can die(not really)", function() {
+  //   batman.damageHealth(101)
+  //   batman.checkHelth()
+  //   // assert.strictEqual(batman.checkHelth, "The batman is dead!")
+  // })
 
 })
